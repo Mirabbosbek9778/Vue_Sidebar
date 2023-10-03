@@ -4,20 +4,11 @@ import { ref } from "vue";
 const show = ref(true);
 </script>
 <template>
-  <div class="wrapper border flex justify">
-    <div class="flex flex-col items-center">
-      <h1>Hовинки фильмов</h1>
-      <div class="flex ">
-        <transition name="el-fade-in-linear">
-          <div v-show="show" class="transition-box"></div>
-        </transition>
-        <transition name="el-fade-in">
-          <div v-show="show" class="transition-box"></div>
-        </transition>
-        <transition name="el-fade-in">
-          <div v-show="show" class="transition-box"></div>
-        </transition>
-        <transition name="el-fade-in">
+  <div class="card">
+    <div class="content">
+      <h1>Новинки фильмов</h1>
+      <div class="flex box">
+        <transition name="el-fade-in" v-for="index in 4" :key="index">
           <div v-show="show" class="transition-box"></div>
         </transition>
       </div>
@@ -26,6 +17,16 @@ const show = ref(true);
 </template>
 
 <style scoped>
+.card {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  height: 312px;
+  padding: 20px 0 0px 40px;
+}
+
 .transition-box {
   margin-bottom: 10px;
   border-radius: 4px;
@@ -38,15 +39,9 @@ const show = ref(true);
   justify-content: center;
   align-items: center;
   border-radius: 16px;
-  margin-top: 30px;
+  margin-right: 20px;
 }
-.wrapper {
-  width: 100%;
-  gap: 20px;
-  border-radius: 40px;
-  background: rgba(255, 255, 255, 0.08);
-  height: 312px;
-}
+
 h1 {
   color: #fff;
   text-align: center;
@@ -54,7 +49,7 @@ h1 {
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
-  line-height: 100%; /* 24px */
+  line-height: 100%;
   text-transform: uppercase;
   padding-top: 40px;
 }

@@ -1,6 +1,6 @@
 <script setup></script>
 <template>
-  <div>
+  <div class="wrapper">
     <h1 class="text-white">Фильмы</h1>
     <div class="flex gap-[10px] pt-8">
       <div>
@@ -39,6 +39,12 @@
   </div>
 </template>
 <style lang="scss" scoped>
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  border-radius: 40px;
+}
 h1 {
   color: #fff;
   font-family: SF Pro Display, sans-serif;

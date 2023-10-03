@@ -77,7 +77,7 @@ const activeNavIndex = ref(null);
 </script>
 
 <template>
-  <div class="h-full wrapper py-10 border">
+  <div class="h-full wrapper py-10">
     <ul class="flex flex-col mr-[150px] px-[30px]">
       <li v-for="(nav, index) in navList" :key="nav" class="mx-auto">
         <router-link outer-link :to="nav.path">
@@ -96,8 +96,8 @@ const activeNavIndex = ref(null);
 
 <style scoped>
 .wrapper {
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 .active-nav {
   background: #ff4b00;
